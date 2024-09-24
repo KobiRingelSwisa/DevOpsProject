@@ -1,23 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Simple JSP Web Application</title>
+    <title>Simple JSP Web App</title>
 </head>
 <body>
-    <h1>Welcome to the Simple JSP Web Application</h1>
-
-    <!-- Input Text Box -->
-    <form action="submit.jsp" method="post">
-        <label for="userInput">Enter something:</label>
-        <input type="text" id="userInput" name="userInput" required>
-        <!-- Submit Button -->
+    <h1>Welcome to Simple JSP Web Application</h1>
+    <form action="process.jsp" method="POST">
+        <label for="name">Enter Your Name:</label>
+        <input type="text" id="name" name="name" required>
         <button type="submit">Submit</button>
     </form>
-
-    <!-- Link to another page -->
-    <a href="anotherPage.jsp">Go to Another Page</a>
-
 </body>
 </html>
