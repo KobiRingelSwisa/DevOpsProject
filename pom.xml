@@ -17,14 +17,14 @@
         <dependency>
             <groupId>io.gatling.highcharts</groupId>
             <artifactId>gatling-charts-highcharts</artifactId>
-            <version>3.23</version> <!-- Update to match your Gatling version -->
+            <version>3.9.9</version> <!-- Update to match your Gatling version -->
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>io.gatling</groupId>
             <artifactId>gatling-test-framework</artifactId>
-            <version>3.23</version> <!-- Update to match your Gatling version -->
+            <version>3.9.9</version> <!-- Update to match your Gatling version -->
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -34,7 +34,7 @@
             <plugin>
                 <groupId>io.gatling</groupId>
                 <artifactId>gatling-maven-plugin</artifactId>
-                <version>3.23</version> <!-- Use a matching Gatling plugin version -->
+                <version>3.9.9</version> <!-- Use a matching Gatling plugin version -->
                 <executions>
                     <execution>
                         <goals>
