@@ -17,14 +17,14 @@
         <dependency>
             <groupId>io.gatling.highcharts</groupId>
             <artifactId>gatling-charts-highcharts</artifactId>
-            <version>3.9.x</version> <!-- Update to match your Gatling version -->
+            <version>3.9.0</version> <!-- Update to match your Gatling version -->
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>io.gatling</groupId>
             <artifactId>gatling-test-framework</artifactId>
-            <version>3.9.x</version> <!-- Update to match your Gatling version -->
+            <version>3.9.0</version> <!-- Update to match your Gatling version -->
             <scope>test</scope>
         </dependency>
     </dependencies>
