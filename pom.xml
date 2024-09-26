@@ -45,9 +45,6 @@
       </executions>
     </plugin>
   </plugins>
-</build>
-
-<build>
   <testSourceDirectory>src/test/scala</testSourceDirectory>
 </build>
 </project>
