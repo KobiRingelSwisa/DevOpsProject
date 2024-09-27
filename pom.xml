@@ -1,61 +1,50 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>com.yourcompany</groupId>
     <artifactId>gatling-loadtest</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <gatling.version>3.9.0</gatling.version> <!-- Adjust to match your version -->
     </properties>
 
     <dependencies>
-        <!-- Gatling dependencies -->
+        <!-- Gatling Dependencies -->
         <dependency>
-            <groupId>io.gatling.highcharts</groupId>
-            <artifactId>gatling-charts-highcharts</artifactId>
-            <version>3.9.5</version> <!-- Match your Gatling version -->
-            <scope>test</scope>
+            <groupId>io.gatling</groupId>
+            <artifactId>gatling-core</artifactId>
+            <version>${gatling.version}</version>
         </dependency>
         <dependency>
             <groupId>io.gatling</groupId>
-            <artifactId>gatling-test-framework</artifactId>
-            <version>3.9.5</version> <!-- Match your Gatling version -->
-            <scope>test</scope>
+            <artifactId>gatling-http</artifactId>
+            <version>${gatling.version}</version>
         </dependency>
     </dependencies>
 
     <build>
-    <plugins>
-        <plugin>
-            <groupId>io.gatling</groupId>
-            <artifactId>gatling-maven-plugin</artifactId>
-            <version>3.9.0</version>
-            <executions>
-                <execution>
-                    <id>gatling-test</id>
-                    <goals>
-                        <goal>test</goal>
-                    </goals>
-                </execution>
-            </executions>
-            <configuration>
-                <simulationsFolder>${project.basedir}/src/test/scala</simulationsFolder> 
-                <includes>
-                  <include>LoadTest_KobiOzAsher</include> <!-- Name of your simulation file without .scala -->
-                </includes>
-            </configuration>
-        </plugin>
-    </plugins>
-</build>
-
-<repositories>
-   <repository>
-      <id>central</id>
-      <url>https://repo.maven.apache.org/maven2</url>
-   </repository>
-</repositories>
+        <plugins>
+            <!-- Gatling Maven Plugin -->
+            <plugin>
+                <groupId>io.gatling</groupId>
+                <artifactId>gatling-maven-plugin</artifactId>
+                <version>${gatling.version}</version>
+                <configuration>
+                    <simulationsFolder>src/test/scala</simulationsFolder> <!-- This points to your simulations folder -->
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>run-gatling</id>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
+
