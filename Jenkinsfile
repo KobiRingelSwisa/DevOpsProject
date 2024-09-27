@@ -19,14 +19,14 @@ pipeline {
         stage('Build') {
             steps {
                 // Build the project with Maven
-                sh '${MAVEN_HOME}/bin/mvn clean install'
+                bat '${MAVEN_HOME}/bin/mvn clean install'
             }
         }
 
         stage('Run Gatling Tests') {
             steps {
                 // Run Gatling tests
-                sh '${MAVEN_HOME}/bin/mvn gatling:test'
+                bat '${MAVEN_HOME}/bin/mvn gatling:test'
             }
         }
     }
