@@ -5,7 +5,7 @@ import scala.concurrent.duration._
 class LoadTest_KobiOzAsher extends Simulation {
 
   val httpProtocol = http
-    .baseUrl("https://8e7e-46-117-198-107.ngrok-free.app/KobiSwisaOzYosefAsherFinkelstein") 
+    .baseUrl("https://5a4e-2a00-a041-3d21-8000-112a-1e3c-7967-4363.ngrok-free.app/KobiSwisaOzYosefAsherFinkelstein") 
     .inferHtmlResources()
 
   val scn = scenario("Load Test for KobiOzAsher")
