@@ -1,44 +1,50 @@
 pipeline {
     agent any
-    
+
+    // Environment variables
     environment {
-        MAVEN_HOME = tool 'Your-Configured-Maven-Name' // Update with the correct Maven tool name
-        JAVA_HOME = tool 'JDK 1.8'
+        MAVEN_HOME = tool 'Maven 3.8.1'  // Replace with your actual configured Maven tool name in Jenkins
+        JAVA_HOME = tool 'JDK 1.8'               // Replace with the correct Java version, if necessary
         PATH = "${MAVEN_HOME}/bin:${JAVA_HOME}/bin:${env.PATH}"
     }
-    
+
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/your-repo/gatling-loadtest.git'
+                // Pull code from GitHub
+                git branch: 'main', url: 'https://github.com/KobiRingelSwisa/DevOpsProject.git'
             }
         }
-        
+
         stage('Build') {
             steps {
-                sh 'mvn clean install'
+                // Build the project with Maven
+                sh '${MAVEN_HOME}/bin/mvn clean install'
             }
         }
-        
+
         stage('Run Gatling Tests') {
             steps {
-                sh 'mvn gatling:test'
+                // Run Gatling tests
+                sh '${MAVEN_HOME}/bin/mvn gatling:test'
             }
         }
     }
-    
+
     post {
         always {
-            // Archive Gatling reports (no need for a node block here)
+            // Archive Gatling reports
             archiveArtifacts artifacts: 'target/gatling/**', allowEmptyArchive: true
-            
-            // Optionally, publish HTML reports
-            publishHTML([allowMissing: false,
-                         alwaysLinkToLastBuild: true,
-                         keepAll: true,
-                         reportDir: 'target/gatling',
-                         reportFiles: 'index.html',
-                         reportName: 'Gatling Test Report'])
+
+            // Publish HTML Gatling reports
+            publishHTML([
+                allowMissing: false,
+                alwaysLinkToLastBuild: true,
+                keepAll: true,
+                reportDir: 'target/gatling',
+                reportFiles: 'index.html',
+                reportName: 'Gatling Test Report'
+            ])
         }
     }
 }
