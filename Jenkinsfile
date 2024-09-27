@@ -5,7 +5,7 @@ pipeline {
     environment {
         MAVEN_HOME = tool 'Maven 3.8.1'  // Replace with your actual configured Maven tool name in Jenkins
         JAVA_HOME = tool 'JDK'               // Replace with the correct Java version, if necessary
-        PATH = "${MAVEN_HOME}/bin:${JAVA_HOME}/bin:${env.PATH}"
+        PATH = "%MAVEN_HOME%/bin:%JAVA_HOME%/bin:${env.PATH}"
     }
 
     stages {
@@ -19,14 +19,14 @@ pipeline {
         stage('Build') {
             steps {
                 // Build the project with Maven
-                bat '${MAVEN_HOME}/bin/mvn clean install'
+                bat '%MAVEN_HOME%/bin/mvn clean install'
             }
         }
 
         stage('Run Gatling Tests') {
             steps {
                 // Run Gatling tests
-                bat '${MAVEN_HOME}/bin/mvn gatling:test'
+                bat '%MAVEN_HOME%/bin/mvn gatling:test'
             }
         }
     }
