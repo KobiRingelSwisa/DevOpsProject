@@ -30,11 +30,11 @@
     </dependencies>
 
     <build>
-  <plugins>
+    <plugins>
     <plugin>
       <groupId>io.gatling</groupId>
       <artifactId>gatling-maven-plugin</artifactId>
-      <version>3.9.0</version> 
+      <version>3.9.0</version>
       <executions>
         <execution>
           <phase>test</phase>
@@ -43,8 +43,10 @@
           </goals>
         </execution>
       </executions>
+      <configuration>
+        <simulationsDirectory>src/test/scala</simulationsDirectory>
+      </configuration>
     </plugin>
   </plugins>
-  <testSourceDirectory>src/test/scala</testSourceDirectory>
 </build>
 </project>
