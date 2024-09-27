@@ -31,7 +31,7 @@
             <plugin>
                 <groupId>io.gatling</groupId>
                 <artifactId>gatling-maven-plugin</artifactId>
-                <version>${gatling.version}</version>
+                <version>4.10.0</version>
                 <configuration>
                     <simulationsFolder>src/test/scala</simulationsFolder> <!-- This points to your simulations folder -->
                 </configuration>
