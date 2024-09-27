@@ -29,25 +29,25 @@
     </dependencies>
 
     <build>
-        <plugins>
-            <plugin>
-                <groupId>io.gatling</groupId>
-                <artifactId>gatling-maven-plugin</artifactId>
-                <version>3.9.0</version>
-                <executions>
-                    <execution>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>test</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <simulationsFolder>src/test/scala</simulationsFolder>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+    <plugins>
+        <plugin>
+            <groupId>io.gatling</groupId>
+            <artifactId>gatling-maven-plugin</artifactId>
+            <version>3.9.0</version>
+            <executions>
+                <execution>
+                    <id>gatling-test</id>
+                    <goals>
+                        <goal>test</goal>
+                    </goals>
+                </execution>
+            </executions>
+            <configuration>
+                <simulationsFolder>${project.basedir}/src/test/scala</simulationsFolder> 
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
 
     <repositories>
        <repository>
