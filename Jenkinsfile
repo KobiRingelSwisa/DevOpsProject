@@ -4,7 +4,7 @@ pipeline {
     // Environment variables
     environment {
         MAVEN_HOME = tool 'Maven 3.8.1'  // Replace with your actual configured Maven tool name in Jenkins
-        JAVA_HOME = tool 'JDK 1.8'               // Replace with the correct Java version, if necessary
+        JAVA_HOME = tool 'JDK'               // Replace with the correct Java version, if necessary
         PATH = "${MAVEN_HOME}/bin:${JAVA_HOME}/bin:${env.PATH}"
     }
 
