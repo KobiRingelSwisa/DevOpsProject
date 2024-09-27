@@ -43,10 +43,16 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <simulationsDirectory>src/test/scala</simulationsDirectory> <!-- Ensure correct directory -->
+                    <simulationsFolder>src/test/scala</simulationsFolder>
                 </configuration>
             </plugin>
         </plugins>
-        <testSourceDirectory>src/test/scala</testSourceDirectory>
     </build>
+
+    <repositories>
+       <repository>
+         <id>central</id>
+         <url>https://repo.maven.apache.org/maven2</url>
+       </repository>
+    </repositories>
 </project>
