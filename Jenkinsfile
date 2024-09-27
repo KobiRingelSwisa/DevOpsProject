@@ -1,27 +1,44 @@
 pipeline {
     agent any
-
-    tools {
-        maven 'Maven 3.8.1' // Make sure you have Maven installed in Jenkins
+    
+    environment {
+        MAVEN_HOME = tool 'Your-Configured-Maven-Name' // Update with the correct Maven tool name
+        JAVA_HOME = tool 'JDK 1.8'
+        PATH = "${MAVEN_HOME}/bin:${JAVA_HOME}/bin:${env.PATH}"
     }
-
+    
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/KobiRingelSwisa/DevOpsProject.git'
+                git branch: 'main', url: 'https://github.com/your-repo/gatling-loadtest.git'
             }
         }
-
-        stage('Run Gatling Load Test') {
+        
+        stage('Build') {
             steps {
-                sh 'mvn clean gatling:test'  // Runs Gatling load test
+                sh 'mvn clean install'
+            }
+        }
+        
+        stage('Run Gatling Tests') {
+            steps {
+                sh 'mvn gatling:test'
             }
         }
     }
-
+    
     post {
         always {
-            gatlingArchive()  // Archive the Gatling report
+            // Archive Gatling reports (no need for a node block here)
+            archiveArtifacts artifacts: 'target/gatling/**', allowEmptyArchive: true
+            
+            // Optionally, publish HTML reports
+            publishHTML([allowMissing: false,
+                         alwaysLinkToLastBuild: true,
+                         keepAll: true,
+                         reportDir: 'target/gatling',
+                         reportFiles: 'index.html',
+                         reportName: 'Gatling Test Report'])
         }
     }
 }
