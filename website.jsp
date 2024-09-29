@@ -7,7 +7,7 @@
 <body>
     <h1>Welcome to Simple JSP Web Application</h1>
     <form action="process.jsp" method="POST">
-        <label for="name">Enter Your Name:</label>
+        <label for="name">Enter Your Name Please:</label>
         <input type="text" id="name" name="name" required>
         <button type="submit">Submit</button>
     </form>

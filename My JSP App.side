@@ -1,0 +1,109 @@
+{
+  "id": "b55ab9d0-4e59-4a44-a879-62c4c087ee4a",
+  "version": "2.0",
+  "name": "My JSP App",
+  "url": "https://c156-46-117-198-107.ngrok-free.app",
+  "tests": [{
+    "id": "21b36fe6-465a-44a6-a0c9-d70fb5e5e5d0",
+    "name": "test1",
+    "commands": [{
+      "id": "5c707ce8-a47b-449a-900d-54f0c4fd9ec3",
+      "comment": "",
+      "command": "open",
+      "target": "/KobiSwisaOzYosefAsherFinkelstein/index.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "99673d64-28d2-4c5e-817c-0d3c5f365042",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8abb48ad-5816-47f9-89b5-869f20e1bb26",
+      "comment": "",
+      "command": "verifyTitle",
+      "target": "Simple JSP Web App",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d2a5a8f7-fa65-4e84-a007-3f99dc1eaf52",
+      "comment": "",
+      "command": "click",
+      "target": "id=name",
+      "targets": [
+        ["id=name", "id"],
+        ["name=name", "name"],
+        ["css=#name", "css:finder"],
+        ["xpath=//input[@id='name']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "524d6cb5-0100-446f-9205-bd32599a8c14",
+      "comment": "",
+      "command": "type",
+      "target": "id=name",
+      "targets": [
+        ["id=name", "id"],
+        ["name=name", "name"],
+        ["css=#name", "css:finder"],
+        ["xpath=//input[@id='name']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "1234"
+    }, {
+      "id": "7af478bc-9d83-4a9c-895c-16c96e8e5fce",
+      "comment": "",
+      "command": "click",
+      "target": "css=button",
+      "targets": [
+        ["css=button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Submit')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f22e7a75-5206-44f6-8199-eb6189b9a772",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9e988cad-bb2d-46ba-86b9-72a929627526",
+      "comment": "",
+      "command": "click",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Form Submitted Successfully!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "70b7ceda-e308-40c5-8f5a-c30dde656998",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Form Submitted Successfully!')]", "xpath:innerText"]
+      ],
+      "value": "Form Submitted Successfully!"
+    }]
+  }],
+  "suites": [{
+    "id": "90fd0b79-26d8-46b5-a551-821dee477c8a",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["21b36fe6-465a-44a6-a0c9-d70fb5e5e5d0"]
+  }],
+  "urls": ["https://c156-46-117-198-107.ngrok-free.app/"],
+  "plugins": []
+}
